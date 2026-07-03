@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam Srivastava | Full-Stack AI Mobile Developer</title>
+  <meta name="description" content="Shivam Srivastava – Top Rated Full-Stack AI Mobile Developer on Upwork. 10+ Years experience in React Native, Flutter, Kotlin, Node.js, Python & LLM Integration. $100K+ earned, 100% Job Success." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & ROOT ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #080c14;
+      --bg2:       #0d1220;
+      --bg3:       #111827;
+      --card:      #131b2e;
+      --border:    rgba(99,232,136,0.15);
+      --green:     #39e87c;
+      --green2:    #00ffaa;
+      --cyan:      #22d3ee;
+      --purple:    #a855f7;
+      --text:      #e2e8f0;
+      --muted:     #8892a4;
+      --radius:    16px;
+      --font:      'Outfit', sans-serif;
+      --mono:      'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+
+    /* ─── SCROLLBAR ─────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 3px; }
+
+    /* ─── NAV ───────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 6%;
+      background: rgba(8,12,20,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    .nav-logo {
+      font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--green), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.9rem; font-weight: 500; color: var(--muted);
+      transition: color 0.3s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--green); transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      padding: 0.55rem 1.4rem !important;
+      background: linear-gradient(135deg, var(--green), var(--cyan));
+      color: #080c14 !important; font-weight: 700 !important; border-radius: 50px;
+      font-size: 0.85rem !important; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(57,232,124,0.35); }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 8rem 6% 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute; width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(57,232,124,0.10) 0%, transparent 70%);
+      top: -150px; right: -100px;
+      animation: floatGlow 7s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    .hero-glow2 {
+      position: absolute; width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(168,85,247,0.09) 0%, transparent 70%);
+      bottom: 0; left: -150px;
+      animation: floatGlow 9s ease-in-out infinite alternate-reverse;
+      pointer-events: none;
+    }
+    @keyframes floatGlow {
+      from { transform: translate(0,0) scale(1); }
+      to   { transform: translate(40px, 40px) scale(1.15); }
+    }
+    .hero-content { max-width: 640px; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(57,232,124,0.08); border: 1px solid rgba(57,232,124,0.3);
+      border-radius: 50px; font-size: 0.8rem; font-weight: 600;
+      color: var(--green); margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-badge .dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(57,232,124,0.7); }
+      50%      { box-shadow: 0 0 0 6px rgba(57,232,124,0); }
+    }
+    .hero-name {
+      font-size: clamp(2.6rem, 5.5vw, 5rem);
+      font-weight: 900; line-height: 1.05; letter-spacing: -2px;
+      margin-bottom: 0.5rem;
+      animation: fadeUp 0.7s ease 0.1s both;
+    }
+    .hero-name span {
+      background: linear-gradient(135deg, var(--green) 0%, var(--cyan) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-title {
+      font-size: clamp(0.95rem, 1.8vw, 1.2rem); color: var(--muted);
+      font-weight: 400; margin-bottom: 1.5rem;
+      animation: fadeUp 0.7s ease 0.2s both;
+    }
+    .hero-title strong { color: var(--cyan); font-weight: 600; }
+    .hero-desc {
+      font-size: 1rem; color: var(--muted); line-height: 1.85;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.7s ease 0.3s both;
+    }
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-bottom: 2.5rem; flex-wrap: wrap;
+      animation: fadeUp 0.7s ease 0.4s both;
+    }
+    .stat-num {
+      font-size: 2rem; font-weight: 800; display: block;
+      background: linear-gradient(135deg, var(--green), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat-label { font-size: 0.76rem; color: var(--muted); font-weight: 500; margin-top: -4px; }
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp 0.7s ease 0.5s both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.85rem 2rem;
+      background: linear-gradient(135deg, var(--green), var(--cyan));
+      color: #080c14; font-weight: 700; font-size: 0.95rem;
+      border-radius: 50px; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(57,232,124,0.4); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.85rem 2rem;
+      background: transparent; color: var(--text); font-weight: 600; font-size: 0.95rem;
+      border-radius: 50px; border: 1px solid var(--border);
+      transition: border-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--green); color: var(--green); transform: translateY(-3px); }
+
+    /* Hero Image */
+    .hero-img-wrap {
+      position: absolute; right: 6%; top: 50%; transform: translateY(-50%);
+      width: min(480px, 38vw);
+      animation: fadeLeft 0.8s ease 0.3s both;
+    }
+    .hero-img-wrap img {
+      border-radius: 24px; width: 100%;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.5),
+                  0 0 80px rgba(57,232,124,0.08);
+    }
+    .hero-img-badge {
+      position: absolute;
+      background: rgba(13,18,32,0.9); border: 1px solid var(--border);
+      border-radius: 12px; padding: 0.6rem 1rem;
+      font-size: 0.8rem; font-weight: 600;
+      display: flex; align-items: center; gap: 0.5rem;
+      backdrop-filter: blur(10px); white-space: nowrap;
+      animation: float 3s ease-in-out infinite;
+    }
+    .hero-img-badge.b1 { top: -15px; left: 15%; animation-delay: 0s; color: #fbbf24; }
+    .hero-img-badge.b2 { top: 25%; right: -30px; animation-delay: 1.2s; color: #61DAFB; }
+    .hero-img-badge.b3 { bottom: 35%; left: -40px; animation-delay: 0.7s; color: #a855f7; }
+    .hero-img-badge.b4 { bottom: -15px; left: 20%; animation-delay: 2.1s; color: var(--green); }
+    .hero-img-badge.b5 { bottom: 15%; right: -30px; animation-delay: 1.6s; color: #47A248; }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translate(40px,-50%); }
+      to   { opacity: 1; transform: translate(0,-50%); }
+    }
+
+    /* ─── SECTION COMMONS ───────────────────────────────────────── */
+    section { padding: 6rem 6%; position: relative; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--green); margin-bottom: 0.8rem;
+    }
+    .section-label::before { content: ''; width: 24px; height: 2px; background: var(--green); }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+      letter-spacing: -1.5px; margin-bottom: 1rem; line-height: 1.1;
+    }
+    .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.7; }
+
+    /* ─── MARQUEE ────────────────────────────────────────────────── */
+    /* ─── LOGO MARQUEE ──────────────────────────────────────────── */
+    .marquee-section {
+      padding: 0; overflow: hidden;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      background: var(--bg2);
+    }
+    .marquee-track {
+      display: flex; gap: 0;
+      animation: marquee 35s linear infinite; width: max-content;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      white-space: nowrap; font-weight: 700; font-size: 0.82rem;
+      color: rgba(255,255,255,0.45); padding: 1rem 1.6rem;
+      border-right: 1px solid var(--border);
+      transition: color 0.3s, background 0.3s;
+      letter-spacing: 0.3px;
+    }
+    .marquee-item:hover { background: rgba(255,255,255,0.03); color: #fff; }
+    .marquee-item svg { flex-shrink: 0; }
+    .marquee-item .logo-icon { width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; }
+
+    /* ─── ABOUT ──────────────────────────────────────────────────── */
+    #about { background: var(--bg2); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.1fr;
+      gap: 4rem; align-items: center; margin-top: 3rem;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 1.1rem; line-height: 1.85; font-size: 0.97rem; }
+    .about-text p strong { color: var(--text); }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+    .badge {
+      padding: 0.4rem 1rem; border-radius: 50px;
+      font-size: 0.8rem; font-weight: 600;
+      background: rgba(57,232,124,0.08); border: 1px solid rgba(57,232,124,0.22);
+      color: var(--green);
+    }
+    .badge.cyan   { background: rgba(34,211,238,0.08); border-color: rgba(34,211,238,0.22); color: var(--cyan); }
+    .badge.purple { background: rgba(168,85,247,0.08); border-color: rgba(168,85,247,0.22); color: var(--purple); }
+    .about-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .about-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .about-card:hover { transform: translateY(-5px); border-color: rgba(57,232,124,0.35); }
+    .about-card-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .about-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .about-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
+    .about-card.span2 { grid-column: span 2; }
+
+    /* ─── SKILLS ─────────────────────────────────────────────────── */
+    #skills { background: var(--bg); }
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .skill-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .skill-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+      border-color: rgba(57,232,124,0.35);
+    }
+    .skill-card-icon {
+      width: 50px; height: 50px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1.25rem;
+    }
+    .skill-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag {
+      font-size: 0.77rem; padding: 0.3rem 0.75rem;
+      background: rgba(255,255,255,0.05); border-radius: 50px;
+      color: var(--muted); border: 1px solid rgba(255,255,255,0.08);
+      font-family: var(--mono); transition: color 0.3s, border-color 0.3s;
+    }
+    .skill-card:hover .skill-tag { border-color: rgba(57,232,124,0.15); }
+
+    /* ─── PROJECTS ───────────────────────────────────────────────── */
+    #projects { background: var(--bg2); }
+    .projects-header { margin-bottom: 3rem; }
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(340px,1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-9px);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+      border-color: rgba(57,232,124,0.3);
+    }
+    .project-img-wrap { overflow: hidden; position: relative; height: 210px; }
+    .project-img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .project-card:hover .project-img { transform: scale(1.07); }
+    .project-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(8,12,20,0.85));
+    }
+    .project-body { padding: 1.5rem; }
+    .project-tags { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .project-tag {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      padding: 0.25rem 0.75rem; border-radius: 50px;
+      background: rgba(57,232,124,0.1); color: var(--green);
+      border: 1px solid rgba(57,232,124,0.2);
+    }
+    .project-tag.c { background: rgba(34,211,238,0.1); color: var(--cyan); border-color: rgba(34,211,238,0.2); }
+    .project-tag.p { background: rgba(168,85,247,0.1); color: var(--purple); border-color: rgba(168,85,247,0.2); }
+    .project-body h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .project-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+    .project-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.9rem;
+      border-radius: 50px; border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04); color: var(--muted);
+      transition: all 0.25s;
+    }
+    .project-link:hover { border-color: var(--green); color: var(--green); background: rgba(57,232,124,0.07); transform: translateY(-1px); }
+    .project-link svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .project-body p { font-size: 0.87rem; color: var(--muted); line-height: 1.7; }
+
+    /* ─── FEATURED PROJECT (DIME VISION) ───────────────────────── */
+    .featured-project {
+      background: var(--card); border: 1px solid rgba(57,232,124,0.25);
+      border-radius: 20px; overflow: hidden; margin-bottom: 2rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .featured-project::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(57,232,124,0.04) 0%, transparent 60%);
+      pointer-events: none; z-index: 0;
+    }
+    .featured-project:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(57,232,124,0.2);
+    }
+    .featured-img-wrap { position: relative; overflow: hidden; min-height: 340px; }
+    .featured-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .featured-project:hover .featured-img-wrap img { transform: scale(1.05); }
+    .featured-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, transparent 60%, var(--card));
+    }
+    .featured-badge {
+      position: absolute; top: 1rem; left: 1rem;
+      background: linear-gradient(135deg, var(--green), var(--cyan));
+      color: #080c14; font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 0.35rem 1rem; border-radius: 50px; z-index: 1;
+    }
+    .featured-body {
+      padding: 2.5rem 2.5rem 2.5rem 2rem;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .featured-body .project-tags { margin-bottom: 1rem; }
+    .featured-body h3 {
+      font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px;
+      line-height: 1.2; margin-bottom: 1rem;
+    }
+    .featured-body p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+    .featured-tech-list {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem;
+    }
+    .featured-tech {
+      font-size: 0.73rem; font-family: var(--mono); padding: 0.25rem 0.7rem;
+      border-radius: 6px; background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09); color: var(--muted);
+    }
+    .mini-projects-section {
+      margin-top: 3rem; padding: 2rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    .mini-projects-title {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .mini-projects-title::before { content: ''; width: 16px; height: 2px; background: var(--muted); }
+    .mini-projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+      gap: 0.75rem;
+    }
+    .mini-project-chip {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.9rem 1rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; transition: border-color 0.3s, transform 0.3s;
+    }
+    .mini-project-chip:hover { border-color: rgba(57,232,124,0.3); transform: translateY(-2px); }
+    .mini-chip-icon { font-size: 1.4rem; flex-shrink: 0; line-height: 1; }
+    .mini-chip-info {}
+    .mini-chip-name { font-size: 0.84rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .mini-chip-tech { font-size: 0.72rem; color: var(--muted); font-family: var(--mono); }
+    @media (max-width: 820px) {
+      .featured-project { grid-template-columns: 1fr; }
+      .featured-img-wrap { min-height: 220px; }
+      .featured-img-overlay { background: linear-gradient(to bottom, transparent 60%, var(--card)); }
+      .featured-body { padding: 1.5rem; }
+      .featured-body h3 { font-size: 1.3rem; }
+    }
+
+    /* ─── EXPERIENCE ─────────────────────────────────────────────── */
+    #experience { background: var(--bg); }
+    .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+    .exp-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .exp-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: linear-gradient(to bottom, var(--green), var(--cyan));
+    }
+    .exp-card:hover { transform: translateY(-5px); border-color: rgba(57,232,124,0.35); }
+    .exp-period {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--green);
+      margin-bottom: 0.5rem; font-family: var(--mono);
+    }
+    .exp-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .exp-company { font-size: 0.88rem; color: var(--cyan); margin-bottom: 1rem; }
+    .exp-card ul { color: var(--muted); font-size: 0.86rem; line-height: 1.8; padding-left: 1rem; }
+    .exp-card ul li { list-style: disc; margin-bottom: 0.25rem; }
+
+    /* ─── TESTIMONIALS ───────────────────────────────────────────── */
+    #testimonials { background: var(--bg2); }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .testi-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .testi-card:hover { transform: translateY(-5px); border-color: rgba(57,232,124,0.3); }
+    .testi-quote { font-size: 3.5rem; line-height: 1; color: var(--green); opacity: 0.35; margin-bottom: 0.75rem; }
+    .stars { color: #fbbf24; font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .testi-text { color: var(--muted); font-size: 0.89rem; line-height: 1.8; margin-bottom: 1.5rem; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 0.8rem; }
+    .testi-avatar {
+      width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--green), var(--cyan));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem; color: #080c14;
+    }
+    .testi-name { font-weight: 700; font-size: 0.9rem; }
+    .testi-role { font-size: 0.76rem; color: var(--muted); }
+
+    /* ─── CONTACT ────────────────────────────────────────────────── */
+    #contact { background: var(--bg); text-align: center; }
+    .contact-inner { max-width: 720px; margin: 3rem auto 0; }
+    .contact-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 24px; padding: 3rem 2rem;
+      position: relative;
+    }
+    .contact-card::before {
+      content: ''; position: absolute; inset: -1px;
+      background: linear-gradient(135deg, rgba(57,232,124,0.15), transparent 40%, rgba(168,85,247,0.15));
+      border-radius: 24px; z-index: -1;
+    }
+    .contact-card p { color: var(--muted); margin-bottom: 2rem; font-size: 1.02rem; line-height: 1.7; }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.75rem 1.5rem;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      border-radius: 50px; font-size: 0.88rem; font-weight: 600;
+      transition: all 0.3s; color: var(--text);
+    }
+    .contact-link:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
+    .contact-link svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .contact-info-bar {
+      font-family: var(--mono); font-size: 0.88rem;
+      color: var(--green); padding: 0.75rem 2rem;
+      background: rgba(57,232,124,0.06); border-radius: 50px;
+      border: 1px solid rgba(57,232,124,0.2); display: inline-block;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────── */
+    footer {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 2rem 6%;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    footer p { color: var(--muted); font-size: 0.83rem; }
+    .footer-logo {
+      font-size: 1.2rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--green), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* ─── SCROLL REVEAL ──────────────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(35px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── CURSOR GLOW ────────────────────────────────────────────── */
+    .cursor-glow {
+      position: fixed; width: 320px; height: 320px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(57,232,124,0.055) 0%, transparent 70%);
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%,-50%);
+      transition: left 0.15s ease, top 0.15s ease;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero-img-wrap { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .exp-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero-stats { gap: 1.5rem; }
+      .about-card-grid { grid-template-columns: 1fr; }
+      .about-card.span2 { grid-column: span 1; }
+      section { padding: 4rem 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ── NAV ─────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-logo">Shivam S.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="https://github.com/devmspl" target="_blank" rel="noopener" id="navGithubLink" style="display:flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span> Available for new projects</div>
+    <h1 class="hero-name">Shivam<br /><span>Srivastava</span></h1>
+    <p class="hero-title">
+      <strong>Full-Stack AI Mobile Developer</strong> &nbsp;·&nbsp; Node &middot; React &middot; Python &middot; LLMs
+    </p>
+    <p class="hero-desc">
+      10+ years delivering mobile &amp; web products that clients trust. Senior-level consultancy that helps you build smarter, ship faster, and reduce budget waste by up to 50%.
+    </p>
+    <div class="hero-stats">
+      <div>
+        <span class="stat-num" id="s1">$100K+</span>
+        <div class="stat-label">Total Earned</div>
+      </div>
+      <div>
+        <span class="stat-num" id="s2">70+</span>
+        <div class="stat-label">Jobs Done</div>
+      </div>
+      <div>
+        <span class="stat-num" id="s3">100%</span>
+        <div class="stat-label">Job Success</div>
+      </div>
+      <div>
+        <span class="stat-num" id="s4">10K+</span>
+        <div class="stat-label">Hours Worked</div>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary" id="viewWorkBtn">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 7l5 5-5 5"/></svg>
+        View My Work
+      </a>
+      <a href="#contact" class="btn-secondary" id="contactBtn">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Get In Touch
+      </a>
+      <a href="https://github.com/devmspl" target="_blank" rel="noopener" class="btn-secondary" id="heroGithubBtn" style="padding:0.85rem 1.5rem;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+  <div class="hero-img-wrap" id="heroImg">
+    <img src="assets/hero_bg.png" alt="Mobile Development Illustration" />
+    <div class="hero-img-badge b1">⭐ Top Rated</div>
+    <div class="hero-img-badge b2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.5" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" stroke-width="1.5" fill="none"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" stroke-width="1.5" fill="none" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" stroke-width="1.5" fill="none" transform="rotate(120 12 12)"/></svg>
+      Mobile Apps
+    </div>
+    <div class="hero-img-badge b3">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+      AI / RAG
+    </div>
+    <div class="hero-img-badge b4">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+      Full-Stack
+    </div>
+    <div class="hero-img-badge b5">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.193 9.555c-1.264-5.58-4.252-7.243-4.932-8.566-.534-1.044-.62-1.444-.62-1.989v-.01l-.016.025C11.57 0 11.5.396 11.5.841c0 2.354-1.662 3.867-2.446 5.837C8.386 8.561 8 10.025 8 11.5c0 3.314 2.686 6 6 6a6 6 0 006-6c0-.974-.181-1.903-.5-2.766a8.697 8.697 0 01-.307-.18zm-5.693 8.92a3 3 0 01-.5-5.959V22h1v-9.484a3 3 0 01-.5 5.959z"/></svg>
+      Database
+    </div>
+  </div>
+</section>
+
+<!-- ── LOGO MARQUEE ──────────────────────────────── -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marqueeTrack">
+
+    <!-- React Native -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.5" fill="#61DAFB"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(120 12 12)"/></svg>
+      <span style="color:#61DAFB">React Native</span>
+    </div>
+
+    <!-- Android -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="#3DDC84"><path d="M17.523 15.341a1 1 0 01-.447-.106l-2.03-1.02a3.976 3.976 0 01-6.092 0l-2.03 1.02a1 1 0 01-.894-1.789l1.964-.982A3.965 3.965 0 018 12V9h8v3c0 .457-.08.895-.994 1.464l1.963.982a1 1 0 01-.446 1.895zM12 3a1 1 0 100-2 1 1 0 000 2zm-5 0a1 1 0 100-2 1 1 0 000 2zM4 9a2 2 0 012-2h12a2 2 0 012 2v3a6 6 0 01-12 0H4V9z"/></svg>
+      <span style="color:#3DDC84">Android</span>
+    </div>
+
+    <!-- iOS / Apple -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      <span style="color:#e0e0e0">iOS / Swift</span>
+    </div>
+
+    <!-- Flutter -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="#54C5F8"><path d="M14.314 0L2.3 12 6 15.7 21.684 0h-7.37zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg>
+      <span style="color:#54C5F8">Flutter</span>
+    </div>
+
+    <!-- Kotlin -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24"><defs><linearGradient id="kg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E44857"/><stop offset="50%" stop-color="#C711E1"/><stop offset="100%" stop-color="#7F52FF"/></linearGradient></defs><path d="M2 2h20L12 12 2 22V2z" fill="url(#kg)"/></svg>
+      <span style="color:#7F52FF">Kotlin</span>
+    </div>
+
+    <!-- Node.js -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="#539E43"><path d="M11.998 24a1.27 1.27 0 01-.626-.164L8.626 22.19c-.389-.218-.199-.295-.07-.34.54-.189.649-.231 1.224-.559.06-.035.14-.021.201.016l2.1 1.246a.27.27 0 00.25 0l8.177-4.72a.253.253 0 00.126-.22V6.395a.257.257 0 00-.127-.222l-8.174-4.716a.252.252 0 00-.25 0L4.11 6.173a.257.257 0 00-.128.222v9.44c0 .09.048.175.128.218l2.242 1.294c1.216.608 1.96-.108 1.96-.828V7.26c0-.133.106-.237.24-.237h1.047c.131 0 .238.104.238.237v9.261c0 1.621-.883 2.552-2.42 2.552-.472 0-.844 0-1.882-.511l-2.148-1.237A1.258 1.258 0 012 16.015V6.574c0-.447.238-.861.626-1.085l8.177-4.723a1.297 1.297 0 011.25 0l8.178 4.722a1.258 1.258 0 01.627 1.085v9.44c0 .448-.238.86-.627 1.086l-8.178 4.722a1.27 1.27 0 01-.625.164z"/></svg>
+      <span style="color:#539E43">Node.js</span>
+    </div>
+
+    <!-- Python -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24"><defs><linearGradient id="pyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3776AB"/><stop offset="100%" stop-color="#FFD43B"/></linearGradient></defs><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.89S0 5.789 0 11.969s3.403 5.968 3.403 5.968h2.03v-2.87S5.32 11.9 8.2 11.9h5.786s2.729.044 2.729-2.637V2.752S17.18 0 11.914 0zm-3.22 1.567a.988.988 0 110 1.976.988.988 0 010-1.976z" fill="#3776AB"/><path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752H12v-.826h8.13S24 18.211 24 12.031s-3.403-5.968-3.403-5.968h-2.03v2.87s.113 3.167-2.767 3.167H9.814S7.085 12.056 7.085 14.737V21.248S6.82 24 12.086 24zm3.22-1.567a.988.988 0 110-1.976.988.988 0 010 1.976z" fill="#FFD43B"/></svg>
+      <span style="color:#FFD43B">Python</span>
+    </div>
+
+    <!-- OpenAI / LLM -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="#10a37f"><path d="M22.282 9.821a5.985 5.985 0 00-.516-4.91 6.046 6.046 0 00-6.51-2.9A6.065 6.065 0 0013.757.306a5.985 5.985 0 00-5.07 2.857 6.059 6.059 0 00-4.065 2.082 5.987 5.987 0 00-1.499 5.315 5.985 5.985 0 00-1.001 4.91 6.046 6.046 0 006.51 2.9 6.065 6.065 0 001.5 1.705 5.985 5.985 0 005.069 2.857 6.046 6.046 0 005.126-2.907 6.059 6.059 0 004.065-2.082 5.987 5.987 0 001.5-5.315zM13.23 21.658a4.482 4.482 0 01-2.88-1.044l.142-.081 4.783-2.761a.795.795 0 00.399-.69v-6.74l2.023 1.168a.071.071 0 01.038.052v5.583a4.504 4.504 0 01-4.505 4.513zM3.866 18.509a4.482 4.482 0 01-.539-3.014l.143.085 4.783 2.762a.778.778 0 00.797 0l5.843-3.369v2.332a.07.07 0 01-.028.057L9.918 20.03a4.504 4.504 0 01-6.052-1.521zM2.516 8.38A4.482 4.482 0 014.83 6.325l-.005.163v5.52a.795.795 0 00.399.691l5.843 3.369-2.024 1.168a.07.07 0 01-.066.008L4.017 14.54A4.504 4.504 0 012.516 8.38zm16.086 3.862l-5.843-3.37L14.783 7.7a.07.07 0 01.066-.008l4.96 2.864a4.504 4.504 0 01-.706 8.12l.005-.163v-5.52a.795.795 0 00-.506-.691zm2.01-3.023l-.142-.085-4.783-2.762a.778.778 0 00-.797 0L8.047 9.741V7.41a.07.07 0 01.028-.057l4.96-2.864a4.504 4.504 0 016.567 4.733zm-12.66 4.151l-2.023-1.168a.07.07 0 01-.038-.052V6.568a4.504 4.504 0 017.395-3.469l-.142.08-4.783 2.762a.795.795 0 00-.399.69l-.01 6.737zm1.099-2.37l2.602-1.5 2.602 1.5v2.999l-2.602 1.5-2.602-1.5V10.999z"/></svg>
+      <span style="color:#10a37f">AI / LLM</span>
+    </div>
+
+    <!-- Next.js -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="#fff"><path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 01-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 00-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 00-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 01-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 01-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 01.174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 004.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 002.466-2.163 11.944 11.944 0 002.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 00-2.499-.523A33.119 33.119 0 0011.573 0z"/></svg>
+      <span style="color:#e0e0e0">Next.js</span>
+    </div>
+
+    <!-- Firebase -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24"><path d="M3.89 15.673L6.255.461A.542.542 0 017.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.54.54 0 00-.919-.295L3.316 19.365l7.856 4.427a1.621 1.621 0 001.588 0zM14.3 7.147l-1.82-3.482a.542.542 0 00-.96 0L3.53 17.984z" fill="#FFA000"/><path d="M14.3 7.147l-1.82-3.482a.542.542 0 00-.96 0L3.53 17.984l5.858-10.837z" fill="#F57F17"/></svg>
+      <span style="color:#FFA000">Firebase</span>
+    </div>
+
+    <!-- Docker -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="#2496ED"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.186.186 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.185.186v1.887c0 .102.083.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.302 2.61-2.171.954 0 3.864-.001 5.549-3.014l.092-.17-.138-.095z"/></svg>
+      <span style="color:#2496ED">Docker</span>
+    </div>
+
+    <!-- MongoDB -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="#47A248"><path d="M17.193 9.555c-1.264-5.58-4.252-7.243-4.932-8.566-.534-1.044-.62-1.444-.62-1.989v-.01l-.016.025C11.57 0 11.5.396 11.5.841c0 2.354-1.662 3.867-2.446 5.837C8.386 8.561 8 10.025 8 11.5c0 3.314 2.686 6 6 6a6 6 0 006-6c0-.974-.181-1.903-.5-2.766a8.697 8.697 0 01-.307-.18zm-5.693 8.92a3 3 0 01-.5-5.959V22h1v-9.484a3 3 0 01-.5 5.959z"/></svg>
+      <span style="color:#47A248">MongoDB</span>
+    </div>
+
+    <!-- Figma -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24"><path d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4z" fill="#0ACF83"/><path d="M4 12c0-2.208 1.792-4 4-4h4v8H8c-2.208 0-4-1.792-4-4z" fill="#A259FF"/><path d="M4 4c0-2.208 1.792-4 4-4h4v8H8C5.792 8 4 6.208 4 4z" fill="#F24E1E"/><path d="M12 0h4c2.208 0 4 1.792 4 4s-1.792 4-4 4h-4V0z" fill="#FF7262"/><path d="M20 12c0 2.208-1.792 4-4 4s-4-1.792-4-4 1.792-4 4-4 4 1.792 4 4z" fill="#1ABCFE"/></svg>
+      <span style="color:#1ABCFE">Figma</span>
+    </div>
+
+    <!-- Java -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="#ED8B00"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/></svg>
+      <span style="color:#ED8B00">Java</span>
+    </div>
+
+    <!-- WebRTC -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="#333"><path d="M12 0C5.374 0 0 5.373 0 12c0 6.628 5.374 12 12 12 6.627 0 12-5.372 12-12C24 5.373 18.627 0 12 0zm0 2.4c5.302 0 9.6 4.298 9.6 9.6S17.302 21.6 12 21.6 2.4 17.302 2.4 12 6.698 2.4 12 2.4zM8.4 7.2a4.8 4.8 0 100 9.6 4.8 4.8 0 000-9.6zm7.2 0a4.8 4.8 0 100 9.6 4.8 4.8 0 000-9.6z" fill="#E84D21"/></svg>
+      <span style="color:#E84D21">WebRTC</span>
+    </div>
+
+    <!-- RAG / AI -->
+    <div class="marquee-item">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+      <span style="color:#a855f7">RAG / AI</span>
+    </div>
+
+    <!-- Duplicate set for seamless loop -->
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.5" fill="#61DAFB"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(120 12 12)"/></svg><span style="color:#61DAFB">React Native</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24" fill="#3DDC84"><path d="M17.523 15.341a1 1 0 01-.447-.106l-2.03-1.02a3.976 3.976 0 01-6.092 0l-2.03 1.02a1 1 0 01-.894-1.789l1.964-.982A3.965 3.965 0 018 12V9h8v3c0 .457-.08.895-.994 1.464l1.963.982a1 1 0 01-.446 1.895zM12 3a1 1 0 100-2 1 1 0 000 2zm-5 0a1 1 0 100-2 1 1 0 000 2zM4 9a2 2 0 012-2h12a2 2 0 012 2v3a6 6 0 01-12 0H4V9z"/></svg><span style="color:#3DDC84">Android</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span style="color:#e0e0e0">iOS / Swift</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24" fill="#54C5F8"><path d="M14.314 0L2.3 12 6 15.7 21.684 0h-7.37zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg><span style="color:#54C5F8">Flutter</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24"><defs><linearGradient id="kg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E44857"/><stop offset="50%" stop-color="#C711E1"/><stop offset="100%" stop-color="#7F52FF"/></linearGradient></defs><path d="M2 2h20L12 12 2 22V2z" fill="url(#kg2)"/></svg><span style="color:#7F52FF">Kotlin</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24" fill="#539E43"><path d="M11.998 24a1.27 1.27 0 01-.626-.164L8.626 22.19c-.389-.218-.199-.295-.07-.34.54-.189.649-.231 1.224-.559.06-.035.14-.021.201.016l2.1 1.246a.27.27 0 00.25 0l8.177-4.72a.253.253 0 00.126-.22V6.395a.257.257 0 00-.127-.222l-8.174-4.716a.252.252 0 00-.25 0L4.11 6.173a.257.257 0 00-.128.222v9.44c0 .09.048.175.128.218l2.242 1.294c1.216.608 1.96-.108 1.96-.828V7.26c0-.133.106-.237.24-.237h1.047c.131 0 .238.104.238.237v9.261c0 1.621-.883 2.552-2.42 2.552-.472 0-.844 0-1.882-.511l-2.148-1.237A1.258 1.258 0 012 16.015V6.574c0-.447.238-.861.626-1.085l8.177-4.723a1.297 1.297 0 011.25 0l8.178 4.722a1.258 1.258 0 01.627 1.085v9.44c0 .448-.238.86-.627 1.086l-8.178 4.722a1.27 1.27 0 01-.625.164z"/></svg><span style="color:#539E43">Node.js</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24"><defs><linearGradient id="pyg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3776AB"/><stop offset="100%" stop-color="#FFD43B"/></linearGradient></defs><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.89S0 5.789 0 11.969s3.403 5.968 3.403 5.968h2.03v-2.87S5.32 11.9 8.2 11.9h5.786s2.729.044 2.729-2.637V2.752S17.18 0 11.914 0zm-3.22 1.567a.988.988 0 110 1.976.988.988 0 010-1.976z" fill="#3776AB"/><path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752H12v-.826h8.13S24 18.211 24 12.031s-3.403-5.968-3.403-5.968h-2.03v2.87s.113 3.167-2.767 3.167H9.814S7.085 12.056 7.085 14.737V21.248S6.82 24 12.086 24zm3.22-1.567a.988.988 0 110-1.976.988.988 0 010 1.976z" fill="#FFD43B"/></svg><span style="color:#FFD43B">Python</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24" fill="#10a37f"><path d="M22.282 9.821a5.985 5.985 0 00-.516-4.91 6.046 6.046 0 00-6.51-2.9A6.065 6.065 0 0013.757.306a5.985 5.985 0 00-5.07 2.857 6.059 6.059 0 00-4.065 2.082 5.987 5.987 0 00-1.499 5.315 5.985 5.985 0 00-1.001 4.91 6.046 6.046 0 006.51 2.9 6.065 6.065 0 001.5 1.705 5.985 5.985 0 005.069 2.857 6.046 6.046 0 005.126-2.907 6.059 6.059 0 004.065-2.082 5.987 5.987 0 001.5-5.315zM13.23 21.658a4.482 4.482 0 01-2.88-1.044l.142-.081 4.783-2.761a.795.795 0 00.399-.69v-6.74l2.023 1.168a.071.071 0 01.038.052v5.583a4.504 4.504 0 01-4.505 4.513zM3.866 18.509a4.482 4.482 0 01-.539-3.014l.143.085 4.783 2.762a.778.778 0 00.797 0l5.843-3.369v2.332a.07.07 0 01-.028.057L9.918 20.03a4.504 4.504 0 01-6.052-1.521zM2.516 8.38A4.482 4.482 0 014.83 6.325l-.005.163v5.52a.795.795 0 00.399.691l5.843 3.369-2.024 1.168a.07.07 0 01-.066.008L4.017 14.54A4.504 4.504 0 012.516 8.38zm16.086 3.862l-5.843-3.37L14.783 7.7a.07.07 0 01.066-.008l4.96 2.864a4.504 4.504 0 01-.706 8.12l.005-.163v-5.52a.795.795 0 00-.506-.691zm2.01-3.023l-.142-.085-4.783-2.762a.778.778 0 00-.797 0L8.047 9.741V7.41a.07.07 0 01.028-.057l4.96-2.864a4.504 4.504 0 016.567 4.733zm-12.66 4.151l-2.023-1.168a.07.07 0 01-.038-.052V6.568a4.504 4.504 0 017.395-3.469l-.142.08-4.783 2.762a.795.795 0 00-.399.69l-.01 6.737zm1.099-2.37l2.602-1.5 2.602 1.5v2.999l-2.602 1.5-2.602-1.5V10.999z"/></svg><span style="color:#10a37f">AI / LLM</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24" fill="#fff"><path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 01-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 00-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 00-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 01-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 01-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 01.174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 004.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 002.466-2.163 11.944 11.944 0 002.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 00-2.499-.523A33.119 33.119 0 0011.573 0z"/></svg><span style="color:#e0e0e0">Next.js</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24"><path d="M3.89 15.673L6.255.461A.542.542 0 017.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.54.54 0 00-.919-.295L3.316 19.365l7.856 4.427a1.621 1.621 0 001.588 0zM14.3 7.147l-1.82-3.482a.542.542 0 00-.96 0L3.53 17.984z" fill="#FFA000"/><path d="M14.3 7.147l-1.82-3.482a.542.542 0 00-.96 0L3.53 17.984l5.858-10.837z" fill="#F57F17"/></svg><span style="color:#FFA000">Firebase</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24" fill="#2496ED"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.186.186 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.185.186v1.887c0 .102.083.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.302 2.61-2.171.954 0 3.864-.001 5.549-3.014l.092-.17-.138-.095z"/></svg><span style="color:#2496ED">Docker</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24" fill="#47A248"><path d="M17.193 9.555c-1.264-5.58-4.252-7.243-4.932-8.566-.534-1.044-.62-1.444-.62-1.989v-.01l-.016.025C11.57 0 11.5.396 11.5.841c0 2.354-1.662 3.867-2.446 5.837C8.386 8.561 8 10.025 8 11.5c0 3.314 2.686 6 6 6a6 6 0 006-6c0-.974-.181-1.903-.5-2.766a8.697 8.697 0 01-.307-.18zm-5.693 8.92a3 3 0 01-.5-5.959V22h1v-9.484a3 3 0 01-.5 5.959z"/></svg><span style="color:#47A248">MongoDB</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24"><path d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4z" fill="#0ACF83"/><path d="M4 12c0-2.208 1.792-4 4-4h4v8H8c-2.208 0-4-1.792-4-4z" fill="#A259FF"/><path d="M4 4c0-2.208 1.792-4 4-4h4v8H8C5.792 8 4 6.208 4 4z" fill="#F24E1E"/><path d="M12 0h4c2.208 0 4 1.792 4 4s-1.792 4-4 4h-4V0z" fill="#FF7262"/><path d="M20 12c0 2.208-1.792 4-4 4s-4-1.792-4-4 1.792-4 4-4 4 1.792 4 4z" fill="#1ABCFE"/></svg><span style="color:#1ABCFE">Figma</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24" fill="#ED8B00"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/></svg><span style="color:#ED8B00">Java</span></div>
+    <div class="marquee-item"><svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg><span style="color:#a855f7">RAG / AI</span></div>
+
+  </div>
+</div>
+
+<!-- ── ABOUT ─────────────────────────────────────────── -->
+<section id="about">
+  <div class="section-label reveal">About Me</div>
+  <h2 class="section-title reveal">Senior Developer Who<br />Delivers Real Results</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>Hi, I'm <strong>Shivam Srivastava</strong>, a Full-Stack AI Mobile Developer from <strong>Bahadurpur, India</strong>. With over a decade of hands-on experience, I've built everything from real-time video streaming platforms to AI-powered mobile applications — products that clients love and users keep coming back to.</p>
+      <p>My expertise spans the full mobile and web stack — crafting pixel-perfect UIs with Figma and shipping production-ready apps using React Native, Flutter, Kotlin, Node.js, and Python. I understand that great software is about business outcomes, not just clean code.</p>
+      <p>I integrate AI tools like ChatGPT API and LLMs into real products, not just demos — making your app smarter and your users happier. As a <strong>Top Rated freelancer</strong> on Upwork with a <strong>100% Job Success Score</strong>, I'm committed to excellence on every project.</p>
+      <div class="badge-row">
+        <span class="badge">🏆 Top Rated</span>
+        <span class="badge">✅ 100% Job Success</span>
+        <span class="badge cyan">🌍 English (Bilingual)</span>
+        <span class="badge purple">📍 IST (UTC+5:30)</span>
+        <span class="badge">⚡ 4–8 hr Response</span>
+      </div>
+    </div>
+    <div class="about-card-grid reveal">
+      <div class="about-card">
+        <div class="about-card-icon">📱</div>
+        <h4>Mobile First</h4>
+        <p>Native &amp; cross-platform apps that feel premium on both iOS and Android.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🧠</div>
+        <h4>AI Integration</h4>
+        <p>LLMs &amp; ChatGPT API built into real, production-ready mobile apps.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🎨</div>
+        <h4>UI/UX Design</h4>
+        <p>Intuitive, clean designs with Figma — smooth flows, not cluttered screens.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">⚡</div>
+        <h4>Fast Delivery</h4>
+        <p>Senior-level consultancy that cuts budget waste by up to 50%.</p>
+      </div>
+      <div class="about-card span2">
+        <div class="about-card-icon">🔄</div>
+        <h4>Long-Term Partnership</h4>
+        <p>Available as needed — open to new projects and long-term collaborations. Over 10,057 hours of dedicated work logged on Upwork with a perfect track record of on-time, on-budget delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ─────────────────────────────────────────── -->
+<section id="skills">
+  <div class="section-label reveal">Tech Stack</div>
+  <h2 class="section-title reveal">Skills &amp; Expertise</h2>
+  <p class="section-sub reveal">A comprehensive toolkit to build, launch, and scale world-class digital products.</p>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-card-icon" style="background:rgba(57,232,124,0.1);">📱</div>
+      <h3>Mobile Development</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">React Native</span>
+        <span class="skill-tag">Flutter</span>
+        <span class="skill-tag">Kotlin</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Swift</span>
+        <span class="skill-tag">Expo</span>
+        <span class="skill-tag">Android SDK</span>
+        <span class="skill-tag">iOS SDK</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon" style="background:rgba(34,211,238,0.1);">🌐</div>
+      <h3>Backend &amp; APIs</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Express.js</span>
+        <span class="skill-tag">FastAPI</span>
+        <span class="skill-tag">REST API</span>
+        <span class="skill-tag">GraphQL</span>
+        <span class="skill-tag">WebSockets</span>
+        <span class="skill-tag">Firebase</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon" style="background:rgba(168,85,247,0.1);">🧠</div>
+      <h3>AI &amp; LLM Integration</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">ChatGPT API</span>
+        <span class="skill-tag">OpenAI</span>
+        <span class="skill-tag">LangChain</span>
+        <span class="skill-tag">LLM Apps</span>
+        <span class="skill-tag">Prompt Eng.</span>
+        <span class="skill-tag">AI Chatbots</span>
+        <span class="skill-tag">Embeddings</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon" style="background:rgba(251,191,36,0.1);">🎨</div>
+      <h3>UI/UX &amp; Design</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">Adobe XD</span>
+        <span class="skill-tag">Prototyping</span>
+        <span class="skill-tag">Material Design</span>
+        <span class="skill-tag">Human Interface</span>
+        <span class="skill-tag">Animations</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon" style="background:rgba(239,68,68,0.1);">☁️</div>
+      <h3>Cloud &amp; Database</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Firebase</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Redis</span>
+        <span class="skill-tag">Docker</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon" style="background:rgba(34,211,238,0.07);">📡</div>
+      <h3>Real-Time &amp; Streaming</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">WebRTC</span>
+        <span class="skill-tag">Agora.io</span>
+        <span class="skill-tag">Socket.io</span>
+        <span class="skill-tag">Live Streaming</span>
+        <span class="skill-tag">Push Notifs</span>
+        <span class="skill-tag">Video Calling</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ────────────────────────────────────────── -->
+<section id="projects">
+  <div class="projects-header">
+    <div class="section-label reveal">Portfolio</div>
+    <h2 class="section-title reveal">Featured Projects</h2>
+    <p class="section-sub reveal">Real-world apps shipped to the App Store, Google Play &amp; the web — trusted by clients worldwide.</p>
+  </div>
+
+  <!-- ★ DIME VISION — FEATURED ENTERPRISE PROJECT ★ -->
+  <div class="featured-project reveal" id="proj-dimevision">
+    <div class="featured-img-wrap">
+      <img src="assets/project_dimevision.png" alt="Dime Vision Enterprise SaaS Dashboard" loading="lazy" />
+      <div class="featured-img-overlay"></div>
+      <div class="featured-badge">★ Enterprise SaaS</div>
+    </div>
+    <div class="featured-body">
+      <div class="project-tags">
+        <span class="project-tag">React / Next.js</span>
+        <span class="project-tag c">Node.js</span>
+        <span class="project-tag p">Microservices</span>
+      </div>
+      <h3>Dime Vision — Multi-Sport Live Broadcasting &amp; Event Platform</h3>
+      <p>An enterprise-grade SaaS platform for managing multi-sport events, live broadcasting, and media operations at scale. Features real-time scorekeeping, live streaming, automated highlights, a Mixtape video editor, tournament management, analytics, and a comprehensive admin dashboard.</p>
+      <p>I developed scalable frontend modules, integrated complex APIs, built enterprise dashboard features, implemented role-based access workflows, and optimised the platform for high performance and maintainability.</p>
+      <div class="featured-tech-list">
+        <span class="featured-tech">React</span>
+        <span class="featured-tech">Next.js</span>
+        <span class="featured-tech">Node.js</span>
+        <span class="featured-tech">Docker</span>
+        <span class="featured-tech">Kafka</span>
+        <span class="featured-tech">Microservices</span>
+        <span class="featured-tech">WebSockets</span>
+        <span class="featured-tech">Role-Based Access</span>
+        <span class="featured-tech">Live Streaming</span>
+        <span class="featured-tech">Analytics</span>
+      </div>
+      <div class="project-links">
+        <a href="https://dimevision.cradle.services/dashboard" target="_blank" rel="noopener" class="project-link" id="dimevision-link" style="border-color:rgba(57,232,124,0.4);color:var(--green);background:rgba(57,232,124,0.07);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Live Dashboard
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Regular 9-card grid -->
+  <div class="projects-grid">
+
+    <!-- ── ASKNOW ── -->
+    <div class="project-card reveal" id="proj-asknow">
+      <div class="project-img-wrap">
+        <img class="project-img" src="assets/project_asknow.png" alt="AskNow AI RAG Chatbot Platform" loading="lazy" />
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">RAG / LLM</span>
+          <span class="project-tag c">React</span>
+          <span class="project-tag p">Node.js</span>
+        </div>
+        <h3>AskNow – AI Knowledge Chatbot Platform</h3>
+        <p>An AI-powered knowledge chatbot platform built on a Retrieval Augmented Generation (RAG) system. Users can build, manage, and analyse intelligent chat experiences trained on their own data — PDFs, docs, websites &amp; more.</p>
+        <div class="project-links">
+          <a href="https://asknow.meander.software/" target="_blank" rel="noopener" class="project-link" id="asknow-live">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+            Live Platform
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── LOOSID ── -->
+    <div class="project-card reveal" id="proj-loosid">
+      <div class="project-img-wrap">
+        <img class="project-img" src="assets/project_loosid.png" alt="Loosid Sober Dating App" loading="lazy" />
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">React Native</span>
+          <span class="project-tag c">Node.js</span>
+          <span class="project-tag p">Firebase</span>
+        </div>
+        <h3>Loosid – Sober Dating &amp; Community App</h3>
+        <p>A complete sober lifestyle platform featuring dating, community feeds, sobriety tools, and event discovery — built for iOS &amp; Android with a vibrant, supportive user base.</p>
+        <div class="project-links">
+          <a href="https://loosiddating.com/" target="_blank" rel="noopener" class="project-link" id="loosid-web">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+            Website
+          </a>
+          <a href="https://loosidapp.com/" target="_blank" rel="noopener" class="project-link" id="loosid-app">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+            App Site
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SPORTUNITY ── -->
+    <div class="project-card reveal" id="proj-sportunity">
+      <div class="project-img-wrap">
+        <img class="project-img" src="assets/project_sportunity.png" alt="Sportunity Event App" loading="lazy" />
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">React Native</span>
+          <span class="project-tag c">Multilingual</span>
+          <span class="project-tag p">Maps API</span>
+        </div>
+        <h3>Sportunity – Multilingual Sports Event Platform</h3>
+        <p>A cross-platform sports event management app with multilingual support, geolocation-based event discovery, team management, and real-time updates — live on both stores.</p>
+        <div class="project-links">
+          <a href="https://play.google.com/store/apps/details?id=com.sportunity" target="_blank" rel="noopener" class="project-link" id="sportunity-android">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.341L5.985 2.007a.999.999 0 00-1.71.707v18.572a1 1 0 001.71.707l11.538-9.286a1 1 0 000-1.366z"/></svg>
+            Android
+          </a>
+          <a href="https://apps.apple.com/app/sportunity" target="_blank" rel="noopener" class="project-link" id="sportunity-ios">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            iOS
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── STASHER ── -->
+    <div class="project-card reveal" id="proj-stasher">
+      <div class="project-img-wrap">
+        <img class="project-img" src="assets/project_stasher.png" alt="Stasher Luggage Storage App" loading="lazy" />
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">React Native</span>
+          <span class="project-tag c">Maps &amp; Geo</span>
+          <span class="project-tag p">Payments</span>
+        </div>
+        <h3>Stasher – Global Luggage Storage Platform</h3>
+        <p>A worldwide luggage storage booking app connecting travellers with verified storage locations. Features map-based discovery, instant booking, QR check-in, and secure payments.</p>
+        <div class="project-links">
+          <a href="https://apps.apple.com/app/stasher-luggage-storage" target="_blank" rel="noopener" class="project-link" id="stasher-ios">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            iOS App
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CYBER FOOD FIJI ── -->
+    <div class="project-card reveal" id="proj-cyberfood">
+      <div class="project-img-wrap">
+        <img class="project-img" src="assets/project_cyberfood.png" alt="Cyber Food Fiji" loading="lazy" />
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Android</span>
+          <span class="project-tag c">Kotlin</span>
+          <span class="project-tag p">Node.js</span>
+        </div>
+        <h3>Cyber Food Fiji – Food Delivery App</h3>
+        <p>A full-featured food delivery platform for the Fiji market — restaurant browsing, real-time order tracking, driver management, and secure in-app payment integration on Android.</p>
+        <div class="project-links">
+          <a href="https://play.google.com/store/apps/details?id=com.cyberfoodfiji" target="_blank" rel="noopener" class="project-link" id="cyberfood-play">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.341L5.985 2.007a.999.999 0 00-1.71.707v18.572a1 1 0 001.71.707l11.538-9.286a1 1 0 000-1.366z"/></svg>
+            Google Play
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── LIVE STREAMING ── -->
+    <div class="project-card reveal" id="proj-livestream">
+      <div class="project-img-wrap">
+        <img class="project-img" src="assets/project_livestream.png" alt="Live Streaming App" loading="lazy" />
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">React Native</span>
+          <span class="project-tag c">WebRTC</span>
+          <span class="project-tag p">Agora.io</span>
+        </div>
+        <h3>Real-Time Video Calling &amp; Live Streaming App</h3>
+        <p>Multi-screen live streaming platform with chat, auto-translate, direct messaging, and multi-host support — deployed to both iOS &amp; Android.</p>
+      </div>
+    </div>
+
+    <!-- ── COMMUNISKI ── -->
+    <div class="project-card reveal" id="proj-communiski">
+      <div class="project-img-wrap">
+        <img class="project-img" src="assets/project_social.png" alt="Communiski Social App" loading="lazy" />
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">React Native</span>
+          <span class="project-tag c">Firebase</span>
+          <span class="project-tag p">Node.js</span>
+        </div>
+        <h3>Communiski – Ski Community &amp; Social Networking</h3>
+        <p>Feature-rich social app for ski enthusiasts — user profiles, community feeds, real-time messaging, and event discovery for iOS &amp; Android.</p>
+      </div>
+    </div>
+
+    <!-- ── BETTER BREATHING ── -->
+    <div class="project-card reveal" id="proj-breathing">
+      <div class="project-img-wrap">
+        <img class="project-img" src="assets/project_health.png" alt="Better Breathing Website" loading="lazy" />
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">React.js</span>
+          <span class="project-tag c">Node.js</span>
+          <span class="project-tag p">UI/UX</span>
+        </div>
+        <h3>Better Breathing – Health Coaching Platform</h3>
+        <p>Professional health &amp; performance coaching website focused on breathing techniques, subscription plans, and wellness content management.</p>
+      </div>
+    </div>
+
+    <!-- ── AI APP ── -->
+    <div class="project-card reveal" id="proj-ai">
+      <div class="project-img-wrap">
+        <img class="project-img" src="assets/project_ai.png" alt="AI Mobile App" loading="lazy" />
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">ChatGPT API</span>
+          <span class="project-tag c">Python</span>
+          <span class="project-tag p">React Native</span>
+        </div>
+        <h3>AI-Powered Smart Assistant Mobile App</h3>
+        <p>Intelligent mobile assistant with LLM &amp; ChatGPT integration for contextual conversations, smart recommendations, and in-app AI-driven features.</p>
+      </div>
+    </div>
+
+  </div><!-- /projects-grid -->
+
+  <!-- ── ALSO WORKED ON ─────────────────────────────────── -->
+  <div class="mini-projects-section reveal">
+    <div class="mini-projects-title">Also Worked On</div>
+    <div class="mini-projects-grid">
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">🛒</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">E-Commerce Mobile App</div>
+          <div class="mini-chip-tech">React Native · Stripe · Firebase</div>
+        </div>
+      </div>
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">📅</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">Booking &amp; Appointment App</div>
+          <div class="mini-chip-tech">Flutter · Node.js · MongoDB</div>
+        </div>
+      </div>
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">💊</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">Healthcare Patient Portal</div>
+          <div class="mini-chip-tech">React Native · Python · AWS</div>
+        </div>
+      </div>
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">🎓</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">EdTech Learning Platform</div>
+          <div class="mini-chip-tech">React.js · Node.js · PostgreSQL</div>
+        </div>
+      </div>
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">🏠</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">Real Estate Listing App</div>
+          <div class="mini-chip-tech">React Native · Maps · Firebase</div>
+        </div>
+      </div>
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">💬</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">Real-Time Chat App</div>
+          <div class="mini-chip-tech">Socket.io · Node.js · Redux</div>
+        </div>
+      </div>
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">💰</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">FinTech Wallet App</div>
+          <div class="mini-chip-tech">React Native · Plaid · Stripe</div>
+        </div>
+      </div>
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">🗺️</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">On-Demand Delivery App</div>
+          <div class="mini-chip-tech">Kotlin · Google Maps · Firebase</div>
+        </div>
+      </div>
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">🎵</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">Music Streaming App</div>
+          <div class="mini-chip-tech">React Native · Spotify API · Node</div>
+        </div>
+      </div>
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">🔐</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">Auth &amp; Security Module</div>
+          <div class="mini-chip-tech">JWT · OAuth2 · Biometrics</div>
+        </div>
+      </div>
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">📊</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">Analytics Dashboard</div>
+          <div class="mini-chip-tech">React · D3.js · REST API</div>
+        </div>
+      </div>
+      <div class="mini-project-chip">
+        <div class="mini-chip-icon">🤖</div>
+        <div class="mini-chip-info">
+          <div class="mini-chip-name">AI Content Generator</div>
+          <div class="mini-chip-tech">Python · OpenAI · FastAPI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── EXPERIENCE ──────────────────────────────────────── -->
+<section id="experience">
+  <div class="section-label reveal">Track Record</div>
+  <h2 class="section-title reveal">Work Experience</h2>
+  <p class="section-sub reveal">A decade of building products that users love and businesses trust.</p>
+  <div class="exp-grid">
+    <div class="exp-card reveal">
+      <div class="exp-period">2020 – Present</div>
+      <h3>Senior Full-Stack Mobile Developer</h3>
+      <div class="exp-company">Upwork (Freelance) · Top Rated · $100K+ Earned</div>
+      <ul>
+        <li>Delivered 70+ projects with 100% Job Success Score</li>
+        <li>Built live-streaming, social, health, and AI mobile apps</li>
+        <li>Integrated LLMs and ChatGPT into production apps</li>
+        <li>Long-term clients across USA, UK, Europe &amp; Australia</li>
+      </ul>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-period">2018 – 2020</div>
+      <h3>React Native &amp; Android Developer</h3>
+      <div class="exp-company">Mobile App Agency · India</div>
+      <ul>
+        <li>Led cross-platform development for 15+ clients</li>
+        <li>Architected Redux &amp; Context API state management</li>
+        <li>Implemented real-time features via WebSockets &amp; Firebase</li>
+        <li>Mentored junior devs &amp; conducted code reviews</li>
+      </ul>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-period">2015 – 2018</div>
+      <h3>Android Developer (Kotlin &amp; Java)</h3>
+      <div class="exp-company">Tech Startup · India</div>
+      <ul>
+        <li>Built Android apps from scratch with Kotlin &amp; Java</li>
+        <li>Integrated payment gateways &amp; third-party APIs</li>
+        <li>Published multiple apps to Google Play Store</li>
+        <li>Collaborated with UI/UX designers using Figma</li>
+      </ul>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-period">2013 – 2015</div>
+      <h3>Junior Mobile Developer</h3>
+      <div class="exp-company">IT Company · India</div>
+      <ul>
+        <li>Started career in Java Android development</li>
+        <li>Built utility apps &amp; custom UI components</li>
+        <li>Learned RESTful API integration and backend basics</li>
+        <li>Foundation in MVC/MVP architecture patterns</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ───────────────────────────────────── -->
+<section id="testimonials">
+  <div class="section-label reveal">Client Reviews</div>
+  <h2 class="section-title reveal">What Clients Say</h2>
+  <p class="section-sub reveal">Real feedback from real clients across 70+ completed projects.</p>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Shivam is an absolute rockstar! He built our live streaming app from scratch and delivered on time. The code quality was top-notch and he communicated perfectly throughout the entire project.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">T</div>
+        <div>
+          <div class="testi-name">Tom W.</div>
+          <div class="testi-role">Streaming Platform, USA</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">One of the best developers I've hired on Upwork. Shivam understood our vision for the social app immediately and delivered a polished, feature-complete product. Highly recommend!</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div>
+          <div class="testi-name">Sarah L.</div>
+          <div class="testi-role">Communiski App, Canada</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Exceptional AI integration skills. Shivam helped us add ChatGPT features to our existing app — the result was seamless and our users absolutely love it. Will definitely hire again!</p>
+      <div class="testi-author">
+        <div class="testi-avatar">D</div>
+        <div>
+          <div class="testi-name">Daniel W.</div>
+          <div class="testi-role">AI Startup, UK</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ─────────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-label reveal" style="justify-content:center;">Let's Work Together</div>
+  <h2 class="section-title reveal" style="text-align:center;">Ready to Build Something<br />Amazing?</h2>
+  <p class="section-sub reveal" style="margin:0.5rem auto 0; text-align:center;">
+    I'm currently available for new projects. Let's discuss how I can help bring your idea to life — fast.
+  </p>
+  <div class="contact-inner">
+    <div class="contact-card reveal">
+      <p>Whether it's a mobile app, AI integration, or a full-stack web platform — I'm here to help you ship fast and smart. Drop a message on Upwork or reach out directly.</p>
+      <div class="contact-links">
+        <a href="https://www.upwork.com/freelancers/meetshivam" target="_blank" rel="noopener noreferrer" class="contact-link" id="upworkProfileLink">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
+          View Upwork Profile
+        </a>
+        <a href="mailto:shivam@meetshivam.dev" class="contact-link" id="sendEmailLink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Send Email
+        </a>
+        <a href="https://github.com/devmspl" target="_blank" rel="noopener noreferrer" class="contact-link" id="githubProfileLink">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub Profile
+        </a>
+      </div>
+      <div class="contact-info-bar">📍 Bahadurpur, India &nbsp;&middot;&nbsp; ⏰ IST (UTC+5:30) &nbsp;&middot;&nbsp; ⚡ Replies in 4–8 hrs</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────── -->
+<footer>
+  <div class="footer-logo">Shivam S.</div>
+  <p>© 2026 Shivam Srivastava &nbsp;·&nbsp; Full-Stack AI Mobile Developer</p>
+  <p>Built with ❤️ in India</p>
+</footer>
+
+<script>
+  // Cursor glow effect
+  const glow = document.getElementById('cursorGlow');
+  document.addEventListener('mousemove', e => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top  = e.clientY + 'px';
+  });
+
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 90);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Navbar shadow on scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.style.boxShadow = window.scrollY > 40 ? '0 4px 40px rgba(0,0,0,0.5)' : 'none';
+  });
+</script>
+</body>
+</html>
